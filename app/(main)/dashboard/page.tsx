@@ -1,5 +1,13 @@
-import { redirect } from "next/navigation";
+import DashboardCard from "./components/DashboardCard";
+import AnalyticsChart from "./components/AnalyticsChart";
+import CandidateList from "./components/CandidateList";
 
 export default function DashboardPage() {
-  return <div>DashboardPage</div>;
+  return (
+    <div className='mt-[4em]'>
+      <DashboardCard />
+      <AnalyticsChart />
+      <CandidateList />
+    </div>
+  );
 }
