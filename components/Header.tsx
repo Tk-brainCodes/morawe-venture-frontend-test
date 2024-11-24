@@ -16,7 +16,8 @@ export default function Header({ isOpen, toggleSidebar }: HeaderProps) {
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSearchQuery(value);
-    filterCandidates(value); // Filter data dynamically
+    filterCandidates(value);
+    window.scrollTo({ top: window.innerHeight / 2, behavior: "smooth" });
   };
 
   return (

@@ -10,6 +10,39 @@ import {
   Profile4,
 } from "@/assets";
 
+const jobList = [
+  "Software Engineer",
+  "Product Manager",
+  "Data Scientist",
+  "UI/UX Designer",
+  "Marketing Specialist",
+  "Business Analyst",
+  "Graphic Designer",
+  "HR Manager",
+];
+
+const nameList = [
+  "Martina",
+  "Nils",
+  "Ralph",
+  "Nina",
+  "Lucas",
+  "Johanna",
+  "Maximilian",
+  "Sophie",
+  "Lena",
+  "David",
+];
+
+const shuffleArray = (array: any[]) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+};
+
+shuffleArray(nameList);
+
 export const SideBarItems = [
   {
     title: "Dashboard",
@@ -59,7 +92,7 @@ export const cardDataProps = [
   {
     name: "Martina",
     address: "60462, Königstein im Taunus",
-    job: "Handwerk",
+    job: jobList[Math.floor(Math.random() * jobList.length)],
     contact: "Abitur",
     avatar: Profile1,
     description:
@@ -68,7 +101,7 @@ export const cardDataProps = [
   {
     name: "Nils",
     address: "63189, Schmitten im Taunus",
-    job: "Handwerk",
+    job: jobList[Math.floor(Math.random() * jobList.length)],
     contact: "Fachabitur",
     avatar: Profile2,
     description:
@@ -77,7 +110,7 @@ export const cardDataProps = [
   {
     name: "Ralph",
     address: "60479, Glashütten im Taunus",
-    job: "Handwerk",
+    job: jobList[Math.floor(Math.random() * jobList.length)],
     contact: "Realabschluss",
     avatar: Profile3,
     description:
@@ -86,7 +119,7 @@ export const cardDataProps = [
   {
     name: "Nina",
     address: "60342, Kelkheim am Taunus",
-    job: "Handwerk",
+    job: jobList[Math.floor(Math.random() * jobList.length)],
     contact: "Abitur",
     avatar: Profile4,
     description:
