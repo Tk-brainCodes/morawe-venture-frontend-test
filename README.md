@@ -77,7 +77,7 @@ Ensure you have the following installed:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/candidate-dashboard.git
+   git clone https://github.com/Tk-brainCodes/morawe-venture-frontend-test.git
    ```
 
 2. **Navigate to the project folder**:
