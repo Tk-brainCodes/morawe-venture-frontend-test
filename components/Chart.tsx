@@ -78,7 +78,7 @@ export function Chart({
         </span>
        </div>
       </div>
-      <div className="mt-[1.5em] absolute inset-1 top-[60px]">
+      <div className="mt-[1.5em] absolute inset-1 top-[60px] px-4">
         <ChartContainer className="h-[110px] w-full sm:w-[320px] -mt-[2.5em]" config={chartConfig}>
           <AreaChart
             accessibilityLayer

@@ -39,24 +39,24 @@ function AnalyticsChart() {
       </div>
 
       <div className='w-[77vw] h-[1px] bg-gray-100 mt-[0.3em] -ml-[0.9em] ' />
-      <div className='w-full px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8 mt-4 overflow-y-hidden'>
+      <div className='w-full px-6 grid grid-cols-1 sm:grid-cols-2 overflow-x-hidden lg:grid-cols-3 gap-4 mb-8 mt-4 overflow-y-hidden'>
         <Chart
           title='Profilbesucher'
           number='26'
-          customStyles='border-r border-gray-100'
+          customStyles='border-r border-gray-100 px-8'
           decrease='-2,4%'
         />
         <Chart
           title='Profil freigeschaltet'
           number='10'
-          customStyles='border-r border-gray-100'
+          customStyles='border-r border-gray-100 px-8'
           increase='+1,24%'
         />
         <Chart
           title='Durchschnitts Gehalt'
           number='1200€'
           industry='deiner Branche'
-          customStyles='border-r border-gray-100'
+          customStyles='border-r border-gray-100 px-8'
           increase='+2,34%'
         />
       </div>
