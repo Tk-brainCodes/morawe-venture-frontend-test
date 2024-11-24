@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { SideBarItems } from "@/constants";
 import { usePathname } from "next/navigation";
 import { ArrowUp, Help } from "@/assets";
@@ -15,7 +15,13 @@ export default function Sidebar({
   handleCloseNav: () => void;
 }) {
   const pathname = usePathname();
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
+  const handleDropdownToggle = (title: string) => {
+    if (title === "Unternehmen") {
+      setDropdownOpen(!dropdownOpen);
+    }
+  };
 
   return (
     <>
@@ -33,6 +39,7 @@ export default function Sidebar({
                   pathname === item.path && "bg-primary",
                   !isOpen && "items-center justify-center"
                 )}
+                onClick={() => handleDropdownToggle(item.title)}
               >
                 <span className='flex gap-x-3'>
                   <Image src={item.icon} alt={item.title} loading='eager' />
@@ -46,14 +53,17 @@ export default function Sidebar({
                   </span>
                 </span>
                 {item.dropdownItems && isOpen ? (
-                  <Image src={ArrowUp} alt={item.title} loading='eager' />
+                  <Image
+                    src={dropdownOpen ? ArrowUp : ArrowUp}
+                    alt={item.title}
+                    loading='eager'
+                  />
                 ) : null}
 
                 {item.title === "Stellenanzeigen" && (
                   <div
                     className={cn(
                       "w-[20px] h-[20px] rounded-full bg-red-100 font-semibold text-red-800 flex items-center justify-center text-[12px]",
-
                       !isOpen && "absolute right-[20px] mb-[1.3em]"
                     )}
                   >
@@ -61,18 +71,22 @@ export default function Sidebar({
                   </div>
                 )}
               </li>
-              {item.dropdownItems &&
-                item.dropdownItems?.map((option) => (
-                  <span
-                    className={cn(
-                      "px-11 text-[14px] hover:text-primary ease-in-out transition cursor-pointer font-semibold mt-[8px] mb-[8px] text-gray-900",
-                      isOpen ? "lg:visible" : "lg:hidden"
-                    )}
-                    key={option.id}
-                  >
-                    {option.title}
-                  </span>
-                ))}
+
+              {item.title === "Unternehmen" &&
+              dropdownOpen &&
+              item.dropdownItems
+                ? item.dropdownItems.map((option) => (
+                    <span
+                      className={cn(
+                        "px-11 text-[14px] hover:text-primary ease-in-out transition cursor-pointer font-semibold mt-[8px] mb-[8px] text-gray-900",
+                        isOpen ? "lg:visible" : "lg:hidden"
+                      )}
+                      key={option.id}
+                    >
+                      {option.title}
+                    </span>
+                  ))
+                : null}
             </ul>
           ))}
         </div>
