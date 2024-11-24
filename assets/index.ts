@@ -21,3 +21,7 @@ export { default as ArrowDown } from "./icons/down-arrow.svg";
 //images
 export { default as Logo } from "./images/logo.png";
 export { default as Userprofile } from "./images/user-avatar.png";
+export { default as Profile1 } from "./images/profile1.png";
+export { default as Profile2 } from "./images/profile2.png";
+export { default as Profile3 } from "./images/profile3.png";
+export { default as Profile4 } from "./images/profile4.png";
