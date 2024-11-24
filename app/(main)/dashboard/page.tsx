@@ -1,3 +1,5 @@
+"use client";
+
 import DashboardCard from "./components/DashboardCard";
 import AnalyticsChart from "./components/AnalyticsChart";
 import CandidateList from "./components/CandidateList";
