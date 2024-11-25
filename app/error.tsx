@@ -14,9 +14,11 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className='bg-slate-800 w-full h-full items-center justify-center flex flex-col'>
-      <h2 className='text-2xl'>Something went wrong!</h2>
-      <button onClick={() => reset()}>Try again</button>
+    <div className='bg-primary w-[100vw] h-[100vh] items-center justify-center flex flex-col'>
+      <h2 className='text-2xl text-gray-900'>Something went wrong!</h2>
+      <button className='text-gray-900' onClick={() => reset()}>
+        Try again
+      </button>
     </div>
   );
 }
